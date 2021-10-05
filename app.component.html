@@ -1,0 +1,60 @@
+<div class="control-section">
+  <ejs-treegrid
+    [dataSource]="data"
+    childMapping="subtasks"
+    height="350"
+    [treeColumnIndex]="1"
+    id="treegridcomp"
+    allowPaging="false"
+    [showColumnChooser]="true"
+    [pageSettings]="pageSettings"
+    allowExcelExport="true"
+    allowPdfExport="true"
+    allowSorting="true"
+    [contextMenuItems]="contextMenuItems"
+    [editSettings]="editing"
+    [toolbar]="toolbar"
+    [filterSettings]="filterOptions"
+  >
+    <e-columns>
+      <e-column field="guid" headerText="GUID" width="190"></e-column>
+      <e-column
+        field="first_name"
+        headerText="First Name"
+        width="90"
+        textAlign="Right"
+        editType="stringedit"
+      ></e-column>
+      <e-column
+        field="last_name"
+        headerText="Last Name"
+        width="90"
+        textAlign="Right"
+        editType="stringedit"
+      ></e-column>
+      <e-column
+        field="email"
+        headerText="Email"
+        width="85"
+        [edit]="editparams"
+        textAlign="Right"
+        editType="stringedit"
+      ></e-column>
+      <e-column
+        field="gender"
+        headerText="Gender"
+        width="90"
+        textAlign="Right"
+        [edit]="editparams"
+        editType="stringedit"
+      ></e-column>
+      <e-column
+        field="car_model"
+        headerText="Car Model"
+        width="80"
+        textAlign="Left"
+        editType="stringedit"
+      ></e-column>
+    </e-columns>
+  </ejs-treegrid>
+</div>
