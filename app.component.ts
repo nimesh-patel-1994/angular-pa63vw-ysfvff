@@ -15,7 +15,7 @@ import {
 } from '@syncfusion/ej2-navigations';
 import { enableRipple } from '@syncfusion/ej2-base';
 
-Grid.Inject(Freeze, Selection);
+Grid.Inject(Selection);
 
 enableRipple(true);
 
@@ -70,7 +70,7 @@ const data = (count) => {
   template: `
   <div id='taskid'> Context Menu text</div>
   <ul id='contextmenutaskid'></ul>
-  <ejs-grid [dataSource]='data' height=300 enableInfiniteScrolling='true' [pageSettings]='pageSettings' [showColumnChooser]='true'  [toolbar]='toolbar'>
+  <ejs-treegrid [dataSource]='data' height=500 enableInfiniteScrolling='true' [pageSettings]='pageSettings' allowSorting='true' allowResizing='true' allowFiltering='true' [showColumnChooser]='true' [toolbar]='toolbar'>
                 <e-columns>
                     <e-column field='TaskID' headerText='Task ID' textAlign='Right' width=70></e-column>
                     <e-column field='Name' width=100></e-column>
@@ -78,7 +78,7 @@ const data = (count) => {
                     <e-column id='age' field='Age' textAlign='Right' width=100></e-column>
                     <e-column id='status' field='Status' width=100></e-column>
                 </e-columns>
-                </ejs-grid>`,
+                </ejs-treegrid>`,
   providers: [
     InfiniteScrollService,
     PageService,
@@ -98,7 +98,7 @@ export class AppComponent implements OnInit {
     this.options = { pageSize: 50 };
     this.infiniteOptions = { enableScroll: true };
     this.pageSettings = { pageSize: 50 };
-    this.toolbar = ['ColumnChooser', 'FreezeService'];
+    this.toolbar = ['ColumnChooser'];
 
     //Initialize menu items.
     let menuItems: MenuItemModel[] = [
