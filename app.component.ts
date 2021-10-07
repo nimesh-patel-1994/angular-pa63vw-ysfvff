@@ -89,7 +89,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.data = data(1000);
     this.options = { pageSize: 50 };
-    this.infiniteOptions = { enableScroll: true };
+    //this.infiniteOptions = { enableScroll: true };
     this.pageSettings = { pageSize: 50 };
     this.toolbar = ['ColumnChooser'];
 
