@@ -41,13 +41,7 @@ const names = [
   'Adams',
 ];
 const hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const designation = [
-  'Manager',
-  'Engineer 1',
-  'Engineer 2',
-  'Developer',
-  'Tester',
-];
+const designation = ['Manager', 'Engineer', 'Analyst', 'Developer', 'Tester'];
 const status = ['Completed', 'Open', 'In Progress', 'Review', 'Testing'];
 const data = (count) => {
   const result = [];
@@ -58,7 +52,7 @@ const data = (count) => {
       Designation:
         designation[Math.round(Math.random() * designation.length)] ||
         designation[0],
-      Age: hours[Math.round(Math.random() * hours.length)] || hours[0],
+      Hours: hours[Math.round(Math.random() * hours.length)] || hours[0],
       Status: status[Math.round(Math.random() * status.length)] || status[0],
     });
   }
@@ -67,15 +61,14 @@ const data = (count) => {
 
 @Component({
   selector: 'app-root',
-  template: `
-  <div id='taskid'> Context Menu text</div>
+  template: `<div id='taskid'> Context Menu text</div>
   <ul id='contextmenutaskid'></ul>
   <ejs-treegrid [dataSource]='data' height=500 enableInfiniteScrolling='true' [pageSettings]='pageSettings' allowSorting='true' allowResizing='true' allowFiltering='true' [showColumnChooser]='true' [toolbar]='toolbar'>
                 <e-columns>
                     <e-column field='TaskID' headerText='Task ID' textAlign='Right' width=70></e-column>
                     <e-column field='Name' width=100></e-column>
                     <e-column id='designation' field='Designation' width=100></e-column>
-                    <e-column id='age' field='Age' textAlign='Right' width=100></e-column>
+                    <e-column id='hours' field='Hours' textAlign='Right' width=100></e-column>
                     <e-column id='status' field='Status' width=100></e-column>
                 </e-columns>
                 </ejs-treegrid>`,
